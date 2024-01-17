@@ -20,6 +20,16 @@ module.exports = {
       twitter: `kylemathews`,
     },
   },
+  headers: [
+    {
+      source: "/ssr-blog/*",
+      headers: {
+        "Cache-Control": "public, max-age=0, must-revalidate", // Tell browsers to always revalidate
+        "Netlify-CDN-Cache-Control":
+          "public, max-age=0, stale-while-revalidate=60", // Tell Edge to cache asset for 60 seconds
+      },
+    },
+  ],
   plugins: [
     `gatsby-plugin-image`,
     {

@@ -44,19 +44,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
   // `context` is available in the template as a prop and as a variable in GraphQL
 
-  createPage({
-    path: `/ssr-blog/{slug}`,
-    component: path.resolve(`src/pages/ssr-blog/{slug}.js`),
-    context: {
-      // Optional: You can pass additional data to your page here
-    },
-    // Add custom headers
-    headers: {
-      "Cache-Control": "public, max-age=0, must-revalidate", // Tell browsers to always revalidate
-      "Netlify-CDN-Cache-Control":
-        "public, max-age=0, stale-while-revalidate=60", // Tell Edge to cache asset for 60 seconds
-    },
-  })
+  // createPage({
+  //   path: `/ssr-blog/{slug}`,
+  //   component: path.resolve(`src/pages/ssr-blog/{slug}.js`),
+  //   context: {
+  //     // Optional: You can pass additional data to your page here
+  //   },
+  //   // Add custom headers
+  //   headers: {
+  //     "Cache-Control": "public, max-age=0, must-revalidate", // Tell browsers to always revalidate
+  //     "Netlify-CDN-Cache-Control":
+  //       "public, max-age=0, stale-while-revalidate=60", // Tell Edge to cache asset for 60 seconds
+  //   },
+  // })
 }
 
 /**
