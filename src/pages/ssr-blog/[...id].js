@@ -3,7 +3,7 @@ import * as React from "react"
 const SSRPage = props => (
   <main>
     <pre>
-      SSR Page for {props.id} - time is {Date.now()}
+      SSR Page for {props.id} - time is {props.serverData.time}
     </pre>{" "}
     <img alt="Happy dog" src={props.serverData.message} />
   </main>
@@ -20,7 +20,7 @@ export async function getServerData() {
     }
 
     return {
-      props: await res.json(),
+      props: { ...(await res.json()), time: Date.now() },
     }
   } catch (error) {
     return {
