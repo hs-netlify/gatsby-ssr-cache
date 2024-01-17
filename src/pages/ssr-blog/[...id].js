@@ -2,7 +2,9 @@ import * as React from "react"
 
 const SSRPage = props => (
   <main>
-    <pre>SSR Page for {props.id}</pre>
+    <pre>
+      SSR Page for {props.id} - time is {Date.now()}
+    </pre>{" "}
     <img alt="Happy dog" src={props.serverData.message} />
   </main>
 )
