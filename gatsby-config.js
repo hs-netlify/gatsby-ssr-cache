@@ -24,7 +24,7 @@ module.exports = {
     {
       source: "/ssr-blog/*",
       headers: [
-        { key: "Cache-Control", value: "public, max-age=20, must-revalidate" },
+        { key: "Cache-Control", value: "public, max-age=0, must-revalidate" },
         {
           key: "Netlify-CDN-Cache-Control",
           value: "public, max-age=0, stale-while-revalidate=3600",
